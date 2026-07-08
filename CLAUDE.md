@@ -60,6 +60,11 @@ separate axes, and keeping them separate is deliberate:
   *"was this complexity actually necessary?"* is answered. A stage document
   references its code by tag and its brick by diff range.
 
+Each stage is built on a branch named `feature/NN-<slug>` and lands in `main`
+through a pull request. That branch is kept after the merge, never deleted, so
+the stage's granular commit history stays reachable under its own ref even once
+`main` has moved on.
+
 **Stage granularity is variable, decided per concept.** A concept that earns
 several bricks gets several stages; a concept that lands in one piece gets
 one. There is no uniform rule imposed up front, and no predrawn list of
