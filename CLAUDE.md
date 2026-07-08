@@ -27,9 +27,33 @@ make that pain visible first.
 ## Structure and progression
 
 The model grows from a single domain, a house, step by step, mirroring the
-rhyme. The concrete stage layout and conventions are not decided yet (the
-design is still being shaped). Do not assume a structure; document it here
-once it exists.
+rhyme. Each step is a *stage*.
+
+**Code rewinds through git; narration accumulates in `docs/`.** These are two
+separate axes, and keeping them separate is deliberate:
+
+- **Code lives in git history.** Each stage is a tag, named `NN-<slug>` where
+  `NN` is the ordinal and `<slug>` names the brick. `main` always holds the
+  most evolved stage. To see the code at an earlier stage,
+  `git checkout <tag>`; to see the brick a stage adds,
+  `git diff <previous>..<tag>`. There is no per-stage duplication of `src/`
+  on `main`.
+- **Narration lives in `docs/`, all of it on `main`.** One Markdown document
+  per stage, named to match its tag (`docs/NN-<slug>.md`), plus the overview
+  (`docs/00-overview.md`). The full story is readable in one pass on `main`,
+  on GitHub, without checking anything out. Each stage document is the place
+  where the pain that justifies the pattern is made visible and where
+  *"was this complexity actually necessary?"* is answered. A stage document
+  references its code by tag and its brick by diff range.
+
+**Stage granularity is variable, decided per concept.** A concept that earns
+several bricks gets several stages; a concept that lands in one piece gets
+one. There is no uniform rule imposed up front, and no predrawn list of
+stages: the number, order, and boundaries of stages emerge as the curriculum
+in `docs/` is written, one concept at a time, letting the pain decide.
+
+Keep `docs/00-overview.md` as the table of contents: the ordered list of
+stages, each linking to its document and naming its tag.
 
 ## Toolchain
 
