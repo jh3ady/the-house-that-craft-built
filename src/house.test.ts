@@ -24,4 +24,13 @@ describe('House', () => {
 
     expect(house.isDoorOpen()).toBe(false)
   })
+
+  it('keeps its door open when opened again', () => {
+    const house = new House()
+    house.openDoor()
+
+    house.openDoor()
+
+    expect(house.isDoorOpen()).toBe(true)
+  })
 })
