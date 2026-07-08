@@ -35,9 +35,10 @@ split into several tagged stages when it is built.
 
 ## Progression
 
-| Stage | Document                                           | Tag                      | The brick it adds                                                                            |
-|-------|----------------------------------------------------|--------------------------|----------------------------------------------------------------------------------------------|
-| 1     | [A house with a door](./01-a-house-with-a-door.md) | `01-a-house-with-a-door` | A house that opens and closes its own encapsulated door, as two plain classes with no rules. |
+| Stage | Document                                           | Tag                      | The brick it adds                                                                                                      |
+|-------|----------------------------------------------------|--------------------------|------------------------------------------------------------------------------------------------------------------------|
+| 1     | [A house with a door](./01-a-house-with-a-door.md) | `01-a-house-with-a-door` | A house that opens and closes its own encapsulated door, as two plain classes with no rules.                           |
+| 2     | [A door that locks](./02-a-door-that-locks.md)     | `02-a-door-that-locks`   | The first invariant: a lockable door that is never both open and locked, making the door an entity that guards a rule. |
 
 Each stage is added here only once it exists as code (a tag) and as a written
 document. There is no predrawn roadmap: the order and boundaries of the stages
