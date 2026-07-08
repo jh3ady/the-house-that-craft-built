@@ -33,4 +33,13 @@ describe('Door', () => {
 
     expect(door.isOpen()).toBe(true)
   })
+
+  it('stays closed when closed again', () => {
+    const door = new Door()
+    door.close()
+
+    door.close()
+
+    expect(door.isOpen()).toBe(false)
+  })
 })
