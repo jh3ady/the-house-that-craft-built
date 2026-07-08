@@ -14,4 +14,8 @@ export class House {
   isDoorOpen() {
     return this.door.isOpen()
   }
+
+  isDoorLocked() {
+    return this.door.isLocked()
+  }
 }

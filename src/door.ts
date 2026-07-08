@@ -1,5 +1,6 @@
 export class Door {
   private opened = false
+  private locked = false
 
   open() {
     this.opened = true
@@ -11,5 +12,9 @@ export class Door {
 
   isOpen() {
     return this.opened
+  }
+
+  isLocked() {
+    return this.locked
   }
 }
