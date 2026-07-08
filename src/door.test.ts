@@ -15,4 +15,13 @@ describe('Door', () => {
 
     expect(door.isOpen()).toBe(true)
   })
+
+  it('closes', () => {
+    const door = new Door()
+    door.open()
+
+    door.close()
+
+    expect(door.isOpen()).toBe(false)
+  })
 })
