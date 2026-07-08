@@ -24,6 +24,20 @@ smell and the added complexity is probably premature for that stage. Prefer
 introducing a pattern only at the step where its absence starts to hurt, and
 make that pain visible first.
 
+## The need comes first: one issue per stage
+
+Every stage starts as a GitHub issue that states the need it answers, opened
+before the code. The need is functional: it describes the capability the house
+must gain, or the pain a later stage must relieve, in the language of what the
+system does, not how it is built or verified. The issue is the requirement-first
+artifact; the code, and the stage document that justifies it, come after. The
+stage's commits reference the issue, and the stage lands by closing it.
+
+Stage 1 is the floor, so its issue is deliberately thin: there is no pain to
+relieve yet, only the need to start with a house whose door opens and closes.
+From stage 2 on, where a pattern is introduced to relieve a real pain, the issue
+is where that pain is stated first, before any code exists to answer it.
+
 ## Structure and progression
 
 The model grows from a single domain, a house, step by step, mirroring the
