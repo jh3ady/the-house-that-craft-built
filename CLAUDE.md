@@ -65,6 +65,11 @@ through a pull request. That branch is kept after the merge, never deleted, so
 the stage's granular commit history stays reachable under its own ref even once
 `main` has moved on.
 
+The pull request is merged with a merge commit (`--no-ff`), never squashed and
+never fast-forwarded. The merge commit marks where the stage landed and carries
+its `closes #N`, so `git log --first-parent main` reads as one entry per stage
+while the per-cycle commits stay one level down.
+
 **Stage granularity is variable, decided per concept.** A concept that earns
 several bricks gets several stages; a concept that lands in one piece gets
 one. There is no uniform rule imposed up front, and no predrawn list of
