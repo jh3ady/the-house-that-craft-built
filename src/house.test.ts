@@ -82,4 +82,13 @@ describe('House', () => {
     expect(() => house.lockDoor()).toThrow(DoorIsOpenError)
     expect(house.isDoorLocked()).toBe(false)
   })
+
+  it('keeps its door locked when locked again', () => {
+    const house = new House()
+    house.lockDoor()
+
+    house.lockDoor()
+
+    expect(house.isDoorLocked()).toBe(true)
+  })
 })
