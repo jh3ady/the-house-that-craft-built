@@ -24,6 +24,20 @@ smell and the added complexity is probably premature for that stage. Prefer
 introducing a pattern only at the step where its absence starts to hurt, and
 make that pain visible first.
 
+## The need comes first: one issue per stage
+
+Every stage starts as a GitHub issue that states the need it answers, opened
+before the code. The need is functional: it describes the capability the house
+must gain, or the pain a later stage must relieve, in the language of what the
+system does, not how it is built or verified. The issue is the requirement-first
+artifact; the code, and the stage document that justifies it, come after. The
+stage's commits reference the issue, and the stage lands by closing it.
+
+Stage 1 is the floor, so its issue is deliberately thin: there is no pain to
+relieve yet, only the need to start with a house whose door opens and closes.
+From stage 2 on, where a pattern is introduced to relieve a real pain, the issue
+is where that pain is stated first, before any code exists to answer it.
+
 ## Structure and progression
 
 The model grows from a single domain, a house, step by step, mirroring the
@@ -45,6 +59,16 @@ separate axes, and keeping them separate is deliberate:
   where the pain that justifies the pattern is made visible and where
   *"was this complexity actually necessary?"* is answered. A stage document
   references its code by tag and its brick by diff range.
+
+Each stage is built on a branch named `feature/NN-<slug>` and lands in `main`
+through a pull request. That branch is kept after the merge, never deleted, so
+the stage's granular commit history stays reachable under its own ref even once
+`main` has moved on.
+
+The pull request is merged with a merge commit (`--no-ff`), never squashed and
+never fast-forwarded. The merge commit marks where the stage landed and carries
+its `closes #N`, so `git log --first-parent main` reads as one entry per stage
+while the per-cycle commits stay one level down.
 
 **Stage granularity is variable, decided per concept.** A concept that earns
 several bricks gets several stages; a concept that lands in one piece gets
