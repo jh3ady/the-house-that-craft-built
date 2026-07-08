@@ -7,4 +7,12 @@ describe('Door', () => {
 
     expect(door.isOpen()).toBe(false)
   })
+
+  it('opens', () => {
+    const door = new Door()
+
+    door.open()
+
+    expect(door.isOpen()).toBe(true)
+  })
 })
