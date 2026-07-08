@@ -14,6 +14,10 @@ export class Door {
     this.locked = true
   }
 
+  unlock() {
+    this.locked = false
+  }
+
   isOpen() {
     return this.opened
   }
