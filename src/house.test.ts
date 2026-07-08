@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import { DoorIsLockedError } from './door'
 import { House } from './house'
 
 describe('House', () => {
@@ -64,5 +65,13 @@ describe('House', () => {
     house.unlockDoor()
 
     expect(house.isDoorLocked()).toBe(false)
+  })
+
+  it('refuses to open a locked door', () => {
+    const house = new House()
+    house.lockDoor()
+
+    expect(() => house.openDoor()).toThrow(DoorIsLockedError)
+    expect(house.isDoorOpen()).toBe(false)
   })
 })
