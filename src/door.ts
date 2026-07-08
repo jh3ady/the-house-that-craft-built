@@ -5,6 +5,10 @@ export class Door {
     this.opened = true
   }
 
+  close() {
+    this.opened = false
+  }
+
   isOpen() {
     return this.opened
   }
