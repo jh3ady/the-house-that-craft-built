@@ -35,7 +35,9 @@ split into several tagged stages when it is built.
 
 ## Progression
 
-No stage is built yet, so this table of contents is empty.
+| Stage | Document                                           | Tag                      | The brick it adds                                                                            |
+|-------|----------------------------------------------------|--------------------------|----------------------------------------------------------------------------------------------|
+| 1     | [A house with a door](./01-a-house-with-a-door.md) | `01-a-house-with-a-door` | A house that opens and closes its own encapsulated door, as two plain classes with no rules. |
 
 Each stage is added here only once it exists as code (a tag) and as a written
 document. There is no predrawn roadmap: the order and boundaries of the stages
