@@ -11,6 +11,10 @@ export class House {
     this.door.close()
   }
 
+  lockDoor() {
+    this.door.lock()
+  }
+
   isDoorOpen() {
     return this.door.isOpen()
   }
