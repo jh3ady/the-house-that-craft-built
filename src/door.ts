@@ -5,6 +5,13 @@ export class DoorIsLockedError extends Error {
   }
 }
 
+export class DoorIsOpenError extends Error {
+  constructor() {
+    super('An open door cannot be locked.')
+    this.name = 'DoorIsOpenError'
+  }
+}
+
 export class Door {
   private opened = false
   private locked = false
@@ -22,6 +29,10 @@ export class Door {
   }
 
   lock() {
+    if (this.opened) {
+      throw new DoorIsOpenError()
+    }
+
     this.locked = true
   }
 
