@@ -56,4 +56,13 @@ describe('House', () => {
 
     expect(house.isDoorLocked()).toBe(true)
   })
+
+  it('unlocks its door', () => {
+    const house = new House()
+    house.lockDoor()
+
+    house.unlockDoor()
+
+    expect(house.isDoorLocked()).toBe(false)
+  })
 })
